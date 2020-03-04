@@ -3,6 +3,4 @@
 export WEBDRIVER_GECKO_DRIVER=/Users/fernandobrule/Clones/futurepyme/futurepyme-office/futurepyme-office-web-spa/node_modules/geckodriver/geckodriver
 export WEBDRIVER_CHROME_DRIVER=/Users/fernandobrule/Clones/futurepyme/futurepyme-office/futurepyme-office-web-spa/node_modules/chromedriver/bin/chromedriver
 
-export WEBDRIVER_TIMEOUTS_IMPLICITLY_WAIT=3000
-
 ./sbt -v -213

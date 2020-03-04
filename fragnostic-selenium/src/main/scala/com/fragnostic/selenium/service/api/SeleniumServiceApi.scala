@@ -8,9 +8,9 @@ trait SeleniumServiceApi {
 
   trait SeleniumServiceApi {
 
-    def getWebDriver(url: String): WebDriver
+    def getWebDriver: WebDriver
 
-    def waitForAjaxResponse(amount: Long): Unit
+    def getWebDriver(url: String): WebDriver
 
     def findById(id: String): WebElement
 
@@ -24,7 +24,9 @@ trait SeleniumServiceApi {
 
     def selectOptionByIndex(id: String, index: Int): Unit
 
-    def quit: Unit
+    def quit(): Unit
+
+    def waitForAjaxResponse(amount: Long): Unit
 
   }
 
