@@ -5,19 +5,20 @@ import com.fragnostic.selenium.service.api.SeleniumServiceApi
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.{ By, WebDriver, WebElement }
 
+import scala.util.Try
+
 trait SeleniumServiceImpl extends SeleniumServiceApi with DriverAgnostic {
 
   def seleniumServiceApi = new DefaultSeleniumService
 
   class DefaultSeleniumService extends SeleniumServiceApi {
 
+    def getWebDriver: WebDriver = webDriver
+
     def getWebDriver(url: String): WebDriver = {
       webDriver.get(url)
       webDriver
     }
-
-    def waitForAjaxResponse(amount: Long): Unit =
-      Thread.sleep(amount)
 
     def findById(id: String): WebElement =
       webDriver.findElement(By.id(id))
@@ -43,8 +44,11 @@ trait SeleniumServiceImpl extends SeleniumServiceApi with DriverAgnostic {
     def selectOptionByIndex(id: String, index: Int): Unit =
       getSelect(id).selectByIndex(index)
 
-    def quit: Unit =
+    def quit(): Unit =
       webDriver.quit()
+
+    def waitForAjaxResponse(amount: Long): Unit =
+      Try(Thread.sleep(amount))
 
   }
 
