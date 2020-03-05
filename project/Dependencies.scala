@@ -8,7 +8,7 @@ object Dependencies {
   lazy val scalatest = "org.scalatest" %% "scalatest" % "3.0.8" % "test"
   lazy val seleniumJava = "org.seleniumhq.selenium" % "selenium-java" % "3.141.59"
 
-  lazy val fragnosticConf = "com.fragnostic" % "fragnostic-conf_2.13" % "0.1.11-SNAPSHOT"
-  lazy val fragnosticSupport = "com.fragnostic" % "fragnostic-support_2.13" % "0.1.12-SNAPSHOT"
+  lazy val fragnosticConf = "com.fragnostic" % "fragnostic-conf_2.13" % "0.1.11"
+  lazy val fragnosticSupport = "com.fragnostic" % "fragnostic-support_2.13" % "0.1.12"
 
 }
